@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="container">
+        <header>To do list</header>
+        <div class="content">
+            <nav class="sidebar">  
+                <div class="inbox">
+                    <button class="btn" id="Inbox">Inbox</button>
+                    <button class="btn" id="Today">Today</button>
+                    <button class="btn" id="Week">This week</button>
+                </div>
+                <div class="projects-list">
+                    <h2>Projects</h2>
+                    <button class="btn" id="Projects">Add Project +</button>
+                    <div class="add-project">
+                        <input type="text"  id="projectName" placeholder="project name...">
+                        <button class="add">Add</button>
+                    </div>
+                </div>
+            </nav>
+            <div class="tasks">
+                <div class="title"></div>
+                <button class="task-btn">+ Add task</button>
+                <div class="add-task-popup">
+                    <input type="text" class="input-add-task-popup">
+                    <input type="date" id="taskDate" name="taskDate" required>
+                    <p><strong>Importance</strong></p><br>
+                    <label for="low">Low</label>
+                    <input type="radio" id="low" name="priority" value="Low">
+                    <label for="medium">Medium</label>
+                    <input type="radio" id="medium" name="priority" value="Medium">    
+                    <label for="high">High</label>
+                    <input type="radio" id="high" name="priority" value="High">
+                    
+                    <button class="add-task">Add</button>
+                </div>
+              
+            </div>
+        </div>
+        <footer>Copyright © 2023 Volky</footer>
+    </div>
+
+    <script src="main.js" defer></script>
+</body>
+</html>
