@@ -5,7 +5,7 @@ const createTaskBtn = document.querySelector('.task-btn');
 const btns = document.querySelectorAll('.btn');
 export let currentProject = 'Inbox';
 
-export function btnsCheck( ) {
+export function btnsCheck() {
     btns.forEach((btn) => {
         btn.addEventListener('mouseover', () => {
             btns.forEach((otherBtn) => {

@@ -1,5 +1,5 @@
 import {currentProject} from './domManipulation'
-import {projects} from './projectCreator'
+import {projects, saveProjectsToLocalStorage} from './projectCreator'
 
 const taskBtn = document.querySelector('.task-btn');
 const addTask = document.querySelector('.add-task');
@@ -23,7 +23,6 @@ export function handleTaskBtn() {
         }
         if(taskTitle && taskTitle !== ''){
             createTask(taskTitle, taskDate, priorityLevel);
-            
         }  
         addTask.removeEventListener('click', handleClick);
         taskPopup.classList.remove('active');
@@ -48,6 +47,8 @@ function createTask(taskTitle, taskDate, priorityLevel) {
             currentTodos = project.todos;
         }
     })
+    saveProjectsToLocalStorage();
+    
     taskDOM(task, currentTodos, undefined);        
 }  
 
@@ -65,6 +66,8 @@ export function taskDOM(task, currentTodos, section){
                 newTask.style.textDecoration = 'none';
                 if (doneCheckbox.checked) {
                     task.done(newTask);
+                    console.log(task);
+
                 }          
             });
             
@@ -84,7 +87,8 @@ export function taskDOM(task, currentTodos, section){
                     doneCheckbox.addEventListener('change', function () {
                         newTask.style.textDecoration = 'none';
                         if (doneCheckbox.checked) {
-                            task.done(newTask);
+                            const task = doneCheckbox.parentNode;
+                            task.style.textDecoration = 'line-through';
                         }          
                     });
                     
@@ -105,7 +109,8 @@ export function taskDOM(task, currentTodos, section){
                             doneCheckbox.addEventListener('change', function () {
                                 newTask.style.textDecoration = 'none';
                                 if (doneCheckbox.checked) {
-                                    task.done(newTask);
+                                    const task = doneCheckbox.parentNode;
+                                    task.style.textDecoration = 'line-through';
                                 }
                             });
 
@@ -129,7 +134,8 @@ export function taskDOM(task, currentTodos, section){
                             doneCheckbox.addEventListener('change', function () {
                                 newTask.style.textDecoration = 'none';
                                 if (doneCheckbox.checked) {
-                                    task.done(newTask);
+                                    const task = doneCheckbox.parentNode;
+                                    task.style.textDecoration = 'line-through';                        
                                 }          
                             });
                             

@@ -112,7 +112,8 @@ button{
 
 .projectElement{
     background-color: var(--content);
-    margin-top: 8px;
+    margin-top: 10px;
+    width: 100px;
 }
 
 
@@ -156,4 +157,16 @@ button{
 .task::before {
     content: '\2022';  
     margin-right: 8px;  
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+h2{
+    margin-left: 16px;
+    font-size: 24px;
 }
